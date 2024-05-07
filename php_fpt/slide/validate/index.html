@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Validation</title>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<form id="emailForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span><br><br>
+    <input type="submit" id="submitBtn" value="Submit">
+</form>
+
+<script>
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+    var emailInput = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+    var submitBtn = document.getElementById('submitBtn');
+
+    // Kiểm tra cú pháp email bằng biểu thức chính quy
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value)) {
+        emailError.textContent = 'Email không đúng định dạng';
+        event.preventDefault(); // Ngăn chặn việc submit form
+        submitBtn.disabled = true; // Vô hiệu hóa nút submit
+    } else {
+        emailError.textContent = ''; // Xóa thông báo lỗi
+        submitBtn.disabled = false; // Kích hoạt lại nút submit
+    }
+});
+</script>
+
+</body>
+</html>

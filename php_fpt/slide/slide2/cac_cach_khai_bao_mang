@@ -1,0 +1,47 @@
+<?php
+
+//Cách 1: array ()
+$array = array();
+print_r($array); //Mảng rỗng
+
+$array = array(1,2,3,4,5);
+print_r($array); //[1,2,3,4,5]
+
+$array = array("a"=>1,"b"=>2,"c"=>3);
+print_r($array); // [a] => 1 ,[b] => 2,[c] => 3
+
+
+//Cách 2: []
+$array = [];
+print_r($array); //Mảng rỗng
+
+$array = [1,2,3,4,5];
+print_r($array);  //[1,2,3,4,5]
+
+$array = ["a"=>1,"b"=>2,"c"=>3];
+print_r($array); // [a] => 1 ,[b] => 2,[c] => 3
+
+//Cách 3 : range()
+
+$array = range(1,5); // khai báo và khởi tạo mảng từ 1=> 5
+print_r($array);  //[1,2,3,4,5]
+
+
+$array = range("a","e"); // khai báo và khởi tạo mảng từ a=> e
+print_r($array);  //[a,b,c,d,e]
+
+$array = range(1,100,10); //khai báo mảng từ 1 đến 100 bước nhảy là 10
+print_r($array);  //[1,11,...,91]
+
+
+//Khởi tại mảng
+$arr = array();
+$arr[0] = 1;
+$arr[1] = 2;
+$arr[2] = 3;
+$arr[]  = 4;
+
+print_r($arr); //1 2,3,4
+
+
+?>
