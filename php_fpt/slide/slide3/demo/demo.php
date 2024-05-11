@@ -42,15 +42,15 @@ echo sum5(100)."\n";
 function maytinh1($number1, $number2, $pheptinh) {
     $result = null;
     switch($pheptinh) {
-        case "cong" : $result = $number1 + $number2; break;
-        case "tru" : $result = ($number1 > $number2) ? $number1 - $number2 : $number2 - $number1; break;
-        case "nhan" : $result = $number1 * $number2; break;
-        case "chia" : $result = $number1 / $number2; break;
+        case "+" : $result = $number1 + $number2; break;
+        case "-"  : $result = ($number1 > $number2) ? $number1 - $number2 : $number2 - $number1; break;
+        case "*" : $result = $number1 * $number2; break;
+        case "/" : $result = $number1 / $number2; break;
     }
     return $result;
 }
-echo maytinh1(5, "cong", 10) . "\n";  // null
-echo maytinh1(number1: 5, pheptinh: "tru", number2: 10) . "\n"; // Named Agurment
+echo maytinh1(5, "+", 10) . "\n";  // null
+echo maytinh1(number1: 5, pheptinh: "-", number2: 10) . "\n"; // Named Agurment
 
 // Tham số bất định - Variadic Parameter
 function sum6(...$arr){
