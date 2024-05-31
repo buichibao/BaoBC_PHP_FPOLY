@@ -12,6 +12,24 @@ if(isset($_GET['search'])){
     $sql = "SELECT productname,categoryname,image,price,products.id as p_id FROM products JOIN categories ON products.category_id = categories.id WHERE products.status = 1 and productname like '%$productName%'";
     $result = mysqli_query($connect,$sql);
 }
+
+if(isset($_GET['doan'])){
+    $sql = "SELECT productname,categoryname,image,price,products.id as p_id FROM products JOIN categories ON products.category_id = categories.id WHERE products.status = 1 and categoryname = 'Đồ ăn'";
+    $result = mysqli_query($connect,$sql);
+}
+
+if(isset($_GET['douong'])){
+    $sql = "SELECT productname,categoryname,image,price,products.id as p_id FROM products JOIN categories ON products.category_id = categories.id WHERE products.status = 1 and categoryname = 'Đồ Uống'";
+    $result = mysqli_query($connect,$sql);
+}
+
+if(isset($_GET['tatca'])){
+  
+$sql = "SELECT productname,categoryname,image,price,products.id as p_id FROM products JOIN categories ON products.category_id = categories.id WHERE products.status = 1 and productname like '%%'";
+    $result = mysqli_query($connect,$sql);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -107,10 +125,17 @@ if(isset($_GET['search'])){
 </section>
 <!-- menu-->
 <section class="menu" id="menu">
-    <h3 class="sub-heading">our menu</h3>
+    <h3 class="sub-heading">our menu</h3>L
     <h1 class="heading">Hôm nay ăn gì?</h1>
    
+    <div>
+        <form action="" method="get">
+            <button class="btn" style="margin-right:10px;margin-bottom:10px" name ="douong">Đồ uống</a>
+            <button class="btn" style="margin-right:10px;margin-bottom:10px" name ="doan">Đồ ăn</a>
+            <button class="btn" style="margin-right:10px;margin-bottom:10px" name ="tatca">Tất cả các sản phẩm</a>
+        </form>
     
+    </div>
     <div class="box-container">
         <?php  
        
@@ -135,7 +160,7 @@ if(isset($_GET['search'])){
                 <p style="color:orangered;font-weight:bold" ><?php echo $row['categoryname'] ?></p>    
                 
                 <span class="pice"><?php echo $row['price'] ?> VND</span>   
-                <a href="cart.php?id=<?php echo $row['p_id'] ?>" class="btn" style="margin-left: 30px;" name ="add">Thêm vào giỏ hàng</a>
+                <a href="cart.php?id=<?php echo $row['p_id'] ?>" class="btn" style="margin-left: 20px;" name ="add">Thêm vào giỏ hàng</a>
             
             </div>
         </div>

@@ -7,9 +7,8 @@ if(isset($_GET['search'])){
     $query = "SELECT * FROM user WHERE  username like '%$username%'";
     $result = $connect ->query($query);
 }else {
-    $query = "SELECT * FROM user ";
+    $query = "SELECT * FROM user";
     $result = $connect ->query($query);
-
 }
 
 

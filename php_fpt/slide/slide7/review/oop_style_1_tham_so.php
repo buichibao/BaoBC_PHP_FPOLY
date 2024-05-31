@@ -14,7 +14,7 @@ if($connect->connect_errno){
 $stmt = $connect->prepare("SELECT id, productname, price FROM products WHERE id = ?");  //trên này lấy ra bao nhiều tham số
 
 $id = 1;
-$stmt->bind_param("s",$id);
+$stmt->bind_param("s",$id); // nếu phía trên câu truy vấn không có pẩm ? thì không cần câu lệnh này
 $stmt->execute();
 $stmt->bind_result($id,$productname,$price); // dưới này phải in ra bấy nhiêu
 
