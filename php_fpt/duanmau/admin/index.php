@@ -2,6 +2,7 @@
 include 'header.php';
 include '../model/danhmuc.php';
 include '../model/sanpham.php';
+include '../model/taikhoan.php';
 include '../model/pdo.php';
 
 if(isset($_GET['page'])){
@@ -121,7 +122,33 @@ if(isset($_GET['page'])){
             $listdanhmuc = select_danhmuc();
             $success = "Cập nhật thành công"; 
             include 'sanpham/list.php';
-            break; 
+            break;
+        /* controller tài khoản */
+        case "listkhachhang":
+            $listkhachhang = select_account();
+            include 'taikhoan/list.php';
+            break;
+        case "updatekhachhang":
+            $id = $_GET['id'];
+            $khachhang = select_account_by_id($id);
+            include 'taikhoan/update.php';
+            break;
+        case "savekhachhang":
+            if(isset($_POST['update']) && $_POST['update']){
+              $id = $_POST['id'];
+              $username = $_POST['username'];
+              $password = $_POST['password'];
+              $email = $_POST['email'];
+              $phonenumber = $_POST['phonenumber'];
+              $address = $_POST['address'];
+              $role = $_POST['role'];
+              echo $role;
+              update_account($id,$username,$password,$email,$phonenumber,$address,$role);
+              $thongbao="Cập nhật thành công";
+            }
+            $listkhachhang = select_account();
+            include 'taikhoan/list.php';
+            break;
         default:
             include 'home.php';    
     }

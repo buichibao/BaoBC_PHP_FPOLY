@@ -161,6 +161,7 @@
 }
 
 .formtaikhoan input[type="text"],
+.formtaikhoan input[type="email"],
 .formtaikhoan input[type="password"],
 .formcontent input[type="text"]{
     width: 100%;
@@ -175,6 +176,7 @@
 }
 
 .formtaikhoan input[type="submit"],
+.formtaikhoan input[type="reset"],
 .formcontent input[type="submit"],
 .formcontent input[type="reset"],
 .formcontent input[type="button"]{
@@ -395,6 +397,12 @@
     from {opacity: .4}
     to {opacity: 1}
   }
+
+  /*sản phẩm chi tiết */
+
+.spct {
+    text-align: center;
+}
 
 
 

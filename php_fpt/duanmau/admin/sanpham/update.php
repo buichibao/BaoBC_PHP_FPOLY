@@ -21,10 +21,9 @@
                     </div>  
                     <div class="row mb10">
                         Hình ảnh sản phẩm <br>
-                        
                         <?php
-                          $imagepath = "../upload/".$sanpham['image'];
-                           if(is_file($imagepath)){ ?>
+                            $imagepath = "../upload/".$sanpham['image'];
+                            if(is_file($imagepath)){ ?>
                             <img src="<?php echo $imagepath?>" alt="" width="80">
                             <?php }else{ echo "no photo"  ?>
                         <?php }?>

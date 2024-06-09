@@ -67,15 +67,7 @@
 
 <header>
     <a href="#" class="logo"><i class="fas-fa-untensils"></i>BuiChiBao.</a>
-    
-    <!-- <nav class="navbar">
-        <a class="active" href="#home">home</a>
-        <a href="#dishes">dishes</a>
-        <a href="#about">about</a>
-        <a href="#menu">menu</a>
-        <a href="#review">review</a>
-        <a href="#order">oder</a>
-    </nav> -->
+
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>

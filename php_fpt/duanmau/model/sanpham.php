@@ -34,6 +34,12 @@ function select_sanpham_by_id($id){
     return pdo_query_one($sql);
 }
 
+function select_san_pham_cung_loai($id){
+    $sql = "SELECT * FROM product WHERE category_id = (SELECT category_id FROM product WHERE id = '$id') and id <> '$id'";
+    return pdo_query($sql);
+}
+
+
 function update_sanpham($id,$productname,$price,$image,$description,$categoryid){
     if($image!=""){
             $sql = "UPDATE product SET product_name = '$productname',price = '$price' ,
@@ -46,6 +52,14 @@ function update_sanpham($id,$productname,$price,$image,$description,$categoryid)
     }
     
     pdo_execute($sql);
+}
+
+
+function get_categoryname($categoryid){
+    $sql = "SELECT * FROM category WHERE id = '$categoryid'";
+    $danhmuc = pdo_query_one($sql);
+    extract($danhmuc);
+    return $category_name;
 }
 
 ?>
