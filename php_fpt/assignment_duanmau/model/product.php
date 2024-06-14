@@ -62,4 +62,21 @@ function get_categoryname($categoryid){
     return $category_name;
 }
 
+function update_view($id){
+    $sql = "UPDATE product SET view = view + 1 WHERE id = '$id'";
+    pdo_execute($sql);
+
+}
+
+/*Tìm vị trí của sản phẩm có id*/
+function findProductIndexById($productId) {
+    foreach ($_SESSION['mycart'] as $index => $product) {
+        if ($product[0] == $productId) {
+            return $index;
+         }
+    }
+    return -1; 
+}
+
+
 ?>

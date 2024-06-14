@@ -84,16 +84,14 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <h3><?=$product_name?></h3>    <!-- tên -->
-                <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit.Aperam,nemo.Sit   <!-- mô tả -->
-                    poro illo.</p>
+                <h3><?=$product_name?> </h3>  <span>Số người xem : <?=$view?></span>  <!-- tên -->
+                <p>đặt hàng ngay , để nhận được ưu đãi hấp dẫn.</p>
                 <!-- <p style="color:orangered;font-weight:bold" ><?=$category_id?></p>     -->
                 
                 <span class="pice"><?=$price?> VND</span>   
                 <form action="index.php?page=addtocart" method="post">
                     <input type="hidden"  name="id" value="<?php echo $id?>">
                     <input type="hidden"  name="productname" value="<?php echo $product_name?>">
-                    <input type="hidden"  name="image" value="<?php echo $image?>">
                     <input type="hidden"  name="price" value="<?php echo $price?>">
                     <input type="submit" name="add" class="btn" value="Thêm vào giỏ hàng">
                 </form>
@@ -132,13 +130,12 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <h3><?=$product_name?></h3>    <!-- tên -->
-                <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit.Aperam,nemo.Sit   <!-- mô tả -->
-                    poro illo.</p>
+                <h3><?=$product_name?> </h3>  <span>Số người xem : <?=$view?></span>  <!-- tên -->
+                <p>đặt hàng ngay , để nhận được ưu đãi hấp dẫn.</p>
                 <!-- <p style="color:orangered;font-weight:bold" ><?=$category_id?></p>     -->
                 
                 <span class="pice"><?=$price?> VND</span>   
-                <a href="cart.php?id=<?=$id?>" class="btn" style="margin-left: 20px;" name ="add">Thêm vào giỏ hàng</a>
+                <a href="cart.php?id=<?=$id?>" class="btn" style="margin-left: 10px;" name ="add">Thêm vào giỏ hàng</a>
             
             </div>
         </div>

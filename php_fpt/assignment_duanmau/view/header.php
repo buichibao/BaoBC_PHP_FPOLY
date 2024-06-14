@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/product.css">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/select.css">
+    <link rel="stylesheet" href="css/billcomfirm.css">
     
 </head>
 <body>
@@ -45,7 +47,7 @@
                  <a href="index.php?page=loginadmin"><i class='bx bxs-user-check' title="Đăng nhập vào trang quản trị"></i></a>
                 <span>Hello, <?=$username ?></p>
               <?php } else { ?> 
-              <a href="cart.php" class="fas fa-shopping-cart"></a>
+              <a href="index.php?page=mybill" class="fas fa-shopping-cart"></a>
               <a href="index.php?page=logout" class='bx bx-log-in' title="Đăng xuất"></a>
               <span>Hello, <?=$username ?></p>
           <?php 

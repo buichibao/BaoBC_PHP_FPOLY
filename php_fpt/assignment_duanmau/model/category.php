@@ -25,4 +25,11 @@ function update_category($id,$categoryname){
     pdo_execute($sql);
 }
 
+/*Thống kê */
+function  statistical_results(){
+    $sql = "SELECT category.id as category_id, category_name,count(product.id) as count_product,min(product.price) as min_price, max(product.price) as max_price,avg(product.price) as avg_price";
+    $sql .=" from product join category on category.id = product.category_id";
+    $sql .= " group by category_id order by category.id desc";
+    return pdo_query($sql);
+}
 ?>

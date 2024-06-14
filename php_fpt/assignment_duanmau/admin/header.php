@@ -28,7 +28,8 @@
         <a href="index.php?page=listcategory">Danh mục</a>
         <a href="index.php?page=listaccount">Khách hàng</a>
         <a href="index.php?page=listcomment">Bình Luận</a>
-        <a href="">Khác</a>
+        <a href="index.php?page=listbill">Đơn Hàng</a>
+        <a href="index.php?page=statistical">Thống Kê</a>
     </nav>
 
     <div class="icons">

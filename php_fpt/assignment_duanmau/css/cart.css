@@ -63,8 +63,8 @@
 .cart .product_container .title-list .item:nth-child(5) input {
     width: 100%;
     border: 2px solid rgb(230, 230, 230);
-    height: 50px;
-    padding: 0 5px 0 5px;
+    /* height: 50px;
+    padding: 0 5px 0 5px; */
     border-radius: 6px;
     font-size: 1.6rem;
     outline: none;

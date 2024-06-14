@@ -1,0 +1,43 @@
+.billcomfirm{
+    border: 1px solid black;
+    margin-top: 100px;
+}
+
+.billcomfirm .thank {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--green);
+    text-align: center;
+}
+.billcomfirm .id_bill{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+.billcomfirm table {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 60%; /* Điều chỉnh chiều rộng của toàn bộ bảng */
+    border-collapse: collapse; /* Gộp các đường viền lại với nhau */
+}
+.billcomfirm th, td {
+    padding: 8px;
+    text-align: left;
+}
+.billcomfirm th {
+    background-color: #f2f2f2;
+}
+.billcomfirm td {
+    width: 10px; /* Điều chỉnh chiều rộng các ô */
+}
+.hd {
+    margin-left: 500px;
+}
+.hd p{
+    font-size: 1.4rem;
+    margin-left: 20px;
+    color: red;
+    font-weight: bold;
+}

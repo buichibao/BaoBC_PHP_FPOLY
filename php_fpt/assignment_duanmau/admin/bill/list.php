@@ -1,5 +1,4 @@
 
-
 <div class="cart convertContent">
     <div>
      <form action="index.php?page=searchcommentbyproductname" method="post" style="margin: 0px 0px 10px 10px;">
@@ -10,29 +9,29 @@
     <article>
         <div class="grid">
             <div class="product_container">
-                <div class="title">
-                    <div class="item">Mã</div>
-                     <div class="item"></div>
-                    <div class="item">Tên tài khoản</div>
-                    <div class="item">Sản phẩm</div>
-                    <div class="item">Nội dung bình luận</div>
+            <div class="title">
+                    <div class="item">ID</div>
+                    <div class="item">Khách Hàng</div>
+                    <div class="item">Số lượng mặt hàng</div>
+                    <div class="item">Tổng đơn hàng</div>
+                    <div class="item">Tình trạng đơn</div>
                     <div class="item"></div>
-                    <div class="item">Ngày bình luận</div>
-                    <div class="item">Xoá</div>
+                  
                 </div>
                 <?php 
-                if(is_array($listcomment)){
-                   foreach ($listcomment as $comment) {
-                    extract($comment)
+                if(is_array($listbill)){
+                   foreach ($listbill as $bill) {
+                    extract($bill);
+                    $status = get_bill_status($bill['bill_stats']);
+                    $quantity =count(count_product_in_bill($bill['id'])) ;
                 ?>
                 <div class="title-list">
-                    <div class="item"><?=$id_c?></div>
-                    <div class="item"></div>
-                    <div class="item"><?=$username?></div>
-                    <div class="item"><?=$product_name?></div>
-                    <div class="item"><?=$comment_content?></div>
-                    <div class="item"></div>
-                    <div class="item"><?=$commentdate?></div>
+        
+                    <div class="item"><?=$bill['id']?></div>
+                    <div class="item"><?=$bill['user_id']?></div>
+                    <div class="item"><?=$quantity?></div>
+                    <div class="item"><?=$bill['totalamount']?></div>
+                    <div class="item"><?=$status?></div>
                     <div class="item"><a href="index.php?page=deletecomment&id=<?=$id_c?>"><i class='bx bx-trash'></i></a></div>
                 </div>
                    

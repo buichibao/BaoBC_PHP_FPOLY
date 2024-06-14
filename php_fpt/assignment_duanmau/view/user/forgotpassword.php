@@ -10,7 +10,8 @@
                 <input type="email" name="email" placeholder="Email or my phone">
             </div>
         </div>  
-        <?php if(is_array($account)) {
+        <?php 
+        if(is_array($account)) {
         extract($account);
         echo "Mật khẩu của bạn là : ".$password;
         } ?>

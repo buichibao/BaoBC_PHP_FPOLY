@@ -1,6 +1,7 @@
 <section class="about" id ="about" style="margin-top: 70px;">
     <h1 class="sub-heading">Sản Phẩm Chi Tiết</h3>
     <?php 
+
     if(is_array($product)){
         extract($product);
     }

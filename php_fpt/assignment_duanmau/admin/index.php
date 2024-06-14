@@ -5,6 +5,7 @@ include '../model/category.php';
 include '../model/product.php';
 include '../model/account.php';
 include '../model/comment.php';
+include '../model/cart.php';
 include '../model/pdo.php';
 
 if(isset($_GET['page'])){
@@ -166,6 +167,16 @@ if(isset($_GET['page'])){
               }
               include '../admin/comment/list.php';
               break;
+        /*controller statistical*/
+        case 'statistical':
+            $result = statistical_results();
+            include '../admin/statistical/statistical.php';
+            break; 
+        /*controller bill */
+        case 'listbill':
+        $listbill = get_all_bill();
+        include '../admin/bill/list.php';
+        break;
         default:
             include 'home.php';    
     }
