@@ -9,12 +9,12 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/product.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/register.css">
-    <link rel="stylesheet" href="../css/cart.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="../css/product.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="../css/login.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="../css/register.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="../css/cart.css?v=<?php echo time()?>">
     
 </head>
 <body>

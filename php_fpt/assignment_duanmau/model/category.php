@@ -1,5 +1,6 @@
 <?php
 
+
 function add_category($categoryname){
     $sql = "INSERT INTO category (category_name) values ('$categoryname')";
     pdo_execute($sql);

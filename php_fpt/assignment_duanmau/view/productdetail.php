@@ -42,9 +42,15 @@
                     <i class="fas fa-dollar-sign"></i>
                     <span>Pay</span>
                 </div>
+                
                 <div class="icons">
-                    <i class="fas fa-add"></i>
-                    <span>Add to cart</span>
+                <form action="index.php?page=addtocart" method="post">
+                    <input type="hidden"  name="id" value="<?php echo $id?>">
+                    <input type="hidden"  name="productname" value="<?php echo $product_name?>">
+                    <input type="hidden"  name="price" value="<?php echo $price?>">
+                    <input type="submit" name="add" class="btn" value="Thêm vào giỏ hàng"> <i class="fas fa-add"></i>
+                </form>
+
                 </div>
             </div>
       
@@ -119,8 +125,14 @@
                     poro illo.</p>
                 <!-- <p style="color:orangered;font-weight:bold" ><?=$category_id?></p>     -->
                 
-                <span class="pice"><?=$price?> VND</span>   
-                <a href="cart.php?id=<?=$id?>" class="btn" style="margin-left: 20px;" name ="add">Thêm vào giỏ hàng</a>
+                <span class="pice"><?=$price?> VND</span>  
+                <form action="index.php?page=addtocart" method="post">
+                    <input type="hidden"  name="id" value="<?php echo $id?>">
+                    <input type="hidden"  name="productname" value="<?php echo $product_name?>">
+                    <input type="hidden"  name="price" value="<?php echo $price?>">
+                    <input type="submit" name="add" class="btn" value="Thêm vào giỏ hàng">
+                </form>
+             
             
             </div>
         </div>

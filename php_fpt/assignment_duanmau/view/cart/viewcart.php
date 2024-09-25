@@ -42,7 +42,7 @@
                     </div>
                     <div class="item"> <p><?=$cart[2]?></p></div>
                     <div class="item"> <p><?=$cart[4]?></p></div>
-                    <div class="item"><a href="index.php?page=deletecart&idcart=<?php echo $index?>"><i class='bx bx-trash' ></i></a></div>
+                    <div class="item"><a href="index.php?page=deletecart&idcart=<?=$index?>"><i class='bx bx-trash'></i></a></div>
                 </div>
                 <?php  
                   $index += 1;

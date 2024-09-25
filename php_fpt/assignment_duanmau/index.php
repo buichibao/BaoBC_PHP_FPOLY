@@ -7,6 +7,7 @@ include 'model/product.php';
 include 'model/account.php';
 include 'model/comment.php';
 include 'model/cart.php';
+// include 'model/sign_in/login.php';
 if(!isset($_SESSION['mycart'])) $_SESSION['mycart'] =[];
 
 
@@ -21,7 +22,7 @@ if(isset($_GET['page'])){
             }
             $listproduct = get_product_by_categoryid($categoryid);
             $listtop10   = get_top10_view();
-            $listcategory   = get_all_category();
+            // $listcategory   = get_all_categoryJS();
             include 'view/home.php';
             break;
         /*controller đăng nhập đăng kí */
@@ -112,7 +113,6 @@ if(isset($_GET['page'])){
                 break;
         case 'deletecart':
             if(isset($_GET['idcart'])){
-                header('location:index.php?page=productdetail');
                 array_slice($_SESSION['mycart'],$_GET['idcart'],1);
             }else{
                 $_SESSION['mycart'] = [];
@@ -153,7 +153,7 @@ if(isset($_GET['page'])){
         default:
             $listproduct = get_product_home();
             $listtop10   = get_top10_view();
-            $listcategory   = get_all_category();
+            // $listcategory   = get_all_categoryJS();
             include 'view/home.php';
 
     }
@@ -161,7 +161,7 @@ if(isset($_GET['page'])){
 
     $listproduct = get_product_home();
     $listtop10   = get_top10_view();
-    $listcategory   = get_all_category();
+    // $listcategory   = get_all_categoryJS();
     include 'view/home.php';
 
 }

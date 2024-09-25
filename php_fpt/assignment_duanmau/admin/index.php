@@ -174,9 +174,43 @@ if(isset($_GET['page'])){
             break; 
         /*controller bill */
         case 'listbill':
-        $listbill = get_all_bill();
+            if(isset($_POST['ib_bill']) && $_POST['ib_bill']){
+                $id_search = $_POST['ib_bill'];
+                $listbill = get_all_bill($id_search);
+            }else {
+                $listbill = get_all_bill("");
+            }
+      
         include '../admin/bill/list.php';
         break;
+        case 'deletebill':
+            if(isset($_GET['id'])&& $_GET['id']>0){
+                $id = $_GET['id'];
+                delete_cart($id);
+                delete_bill($id);
+
+            }
+            $listbill = get_all_bill("");
+            include '../admin/bill/list.php';
+            break;
+        case 'updatebill':
+            if(isset($_GET['id'])&& $_GET['id']>0){
+                $id = $_GET['id'];
+                $bill = get_bill_by_id($id);
+            }
+            include '../admin/bill/update.php';
+            break;
+        case 'saveupdatebill':
+            if(isset($_POST['save']) && $_POST['save']){
+                $id = $_POST['id'];
+                $status = $_POST['status'];
+                update_bill($id,$status);
+                $notification = "Cập nhật thành công";
+            }
+            $listbill = get_all_bill("");
+            include '../admin/bill/list.php';
+            break;
+
         default:
             include 'home.php';    
     }

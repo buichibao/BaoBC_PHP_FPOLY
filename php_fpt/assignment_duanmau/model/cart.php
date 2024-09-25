@@ -20,8 +20,11 @@ function insert_cart($user_id,$product_id,$productname,$price,$quantity,$bill_id
     return pdo_execute($sql);
 }
 
-function get_all_bill(){
-    $sql = "SELECT * FROM bill ";
+function get_all_bill($id_seach){
+    $sql = "SELECT * FROM bill  WHERE 1";
+    if($id_seach != ""){
+       $sql .=" AND id like '%".$id_seach."%'";
+    }
     return pdo_query($sql);
 }
 
@@ -42,9 +45,11 @@ function loadall_bill($userid){
 }
 
 function count_product_in_bill($bill_id){
-    $sql = "SELECT * FROM cart where bill_id = '$bill_id'";
+    $sql = "SELECT * FROM cart join user on user.id = cart.user_id where bill_id = '$bill_id'";
     return pdo_query($sql);
 }
+
+
 
 function get_bill_status($n){
     
@@ -66,4 +71,21 @@ function get_bill_status($n){
       }
       return $status;
 }
+
+ function delete_cart($bill_id){
+    $sql = "DELETE from cart WHERE bill_id = '$bill_id'";
+    return pdo_execute($sql);
+ }
+
+ 
+ function delete_bill($bill_id){
+    $sql = "DELETE from bill WHERE id = '$bill_id'";
+    return pdo_execute($sql);
+ }
+
+ function update_bill($bill_id,$status){
+    $sql = "UPDATE bill SET bill_stats = '$status' WHERE id = '$bill_id'";
+    return pdo_execute($sql);
+ }
+
 ?>

@@ -135,7 +135,12 @@
                 <!-- <p style="color:orangered;font-weight:bold" ><?=$category_id?></p>     -->
                 
                 <span class="pice"><?=$price?> VND</span>   
-                <a href="cart.php?id=<?=$id?>" class="btn" style="margin-left: 10px;" name ="add">Thêm vào giỏ hàng</a>
+                <form action="index.php?page=addtocart" method="post">
+                    <input type="hidden"  name="id" value="<?php echo $id?>">
+                    <input type="hidden"  name="productname" value="<?php echo $product_name?>">
+                    <input type="hidden"  name="price" value="<?php echo $price?>">
+                    <input type="submit" name="add" class="btn" value="Thêm vào giỏ hàng">
+                </form>
             
             </div>
         </div>

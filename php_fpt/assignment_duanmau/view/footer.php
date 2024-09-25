@@ -44,6 +44,10 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script.js?v=<?php echo time()?>"></script>
+<script src="js/jquery.js?v=<?php echo time()?>"></script>
+<script src="js/sign_in.js?v=<?php echo time()?>"></script>
+<script src="js/product_user.js?v=<?php echo time()?>"></script>
+<script src="js/logout.js?v=<?php echo time()?>"></script>
 </body>
 </html>

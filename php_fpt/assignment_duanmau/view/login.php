@@ -3,20 +3,23 @@
    
     <h1 class="sub-heading">Đăng nhập</h1>
 
-    <form action="index.php?page=login" method="post">
+    <form  class="login">
         <div>
             <a href="#" class="logo" id ="logo_login">BuiChiBao.</a>
         </div>
         <div class="inputBox">
-            <div class="input">
+            <div class="input-box input">
                 <span>Tài khoản</span>
                 <input type="text" name="username" placeholder="Nhập tên tài khoản">
+                <p class="message"></p>
             </div>
-            <div class="input">
+            <div class="input-box input">
                 <span>Mật khẩu</span>
                 <input type="password"  name="password" placeholder="Nhập mật khẩu">
+                <p class="message"></p>
+
             </div>
-            <p style="color:red"><?php if(isset($notification)&& $notification!="") echo $notification ?></p>
+            
         </div>
         <!-- Quên mật khẩu -->
         <p style="text-align: right;font-size:12px"><a href="index.php?page=forgotpassword">Quên mật khẩu ?</a></p>
