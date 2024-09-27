@@ -41,7 +41,7 @@
                 <th scope="col">' . $row['class_name'] . '</th>
                 <th scope="col">' . $row['email'] . '</th>
                 <td><button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></td>
-                <td><button type="button" name="delete" class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
+                <td><a href="index.php?chucnang=delete&id='.$row['id'].'"><button type="button" name="delete" class="btn btn-danger"><i class="bi bi-trash"></i></button></a></td>
                 </tr>';
                 }
             }else {

@@ -14,4 +14,10 @@
     $result = mysqli_query($connect,$sql);
     return $result;
   }
+
+  function deleteStudent($id){
+    global $connect;
+    $sql = "UPDATE student set status =1 WHERE id ='$id'";
+    mysqli_query($connect,$sql);
+ }
 ?>

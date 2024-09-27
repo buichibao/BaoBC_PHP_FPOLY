@@ -31,9 +31,20 @@ use app\core\Field;
         <?php echo $form->field('email')?>
         <?php echo $form->field('password')->passwordField();?>
         <?php echo $form->field('confirmPassword')->passwordField();?>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" name='submit'>Submit</button>
         <?php echo Form::end(); ?>
     </div>
+    <div>
+        <?php 
+           if(isset($_POST['submit'])){
+            echo $form->field('firstname')->getLabel($_POST['firstname']);
+            echo $form->field('lastname')->getLabel($_POST['lastname']);
+            echo $form->field('email')->getLabel($_POST['email']);
+           }
+         ?>
+     
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

@@ -1,16 +1,18 @@
 <?php
-//require 'database.php';
-spl_autoload_register(function ($class) {
-    if (strstr($class, 'Core\\')) { // có thể dùng strpos
-        $filename = str_replace('Core\\', '', $class);
-        $filename.='.php';
-        if (file_exists($filename)) {
-            include $filename;
-        } else {
-            echo "File không tồn tại: " . $filename;
-        }
-    }
-});
+// require './app/database.php';
+require './vendor/autoload.php';
+
+// spl_autoload_register(function ($class) {
+//     if (strstr($class, 'Core\\')) { // có thể dùng strpos
+//         $filename = str_replace('Core\\', './app/', $class);
+//         $filename.='.php';
+//         if (file_exists($filename)) {
+//             include $filename;
+//         } else {
+//             echo "File không tồn tại: " . $filename;
+//         }
+//     }
+// });
 
 use \Core\database as DB;
 

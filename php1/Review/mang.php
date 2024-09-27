@@ -134,6 +134,7 @@ var_dump($keys); // mảng rỗng không phải NULL
 $array = [1,2,3,4,5];
 $values = array_values($array);
 var_dump($values); // 1,2,3,4,5
+print_r($values);
 
 //Hàm array_values($array): nếu $array rỗng thì trả về mảng rỗng
 $array = [];
@@ -158,7 +159,7 @@ var_dump($array); // 1 ,2 ,3 ,4 ,5
 //$array : mảng gốc
 //index : chỉ số bắt đầu lấy
 //số phẩn tử : số phần tử cần lấy bắt đầu từ vị trí index
-//trả về 1 mảng mới gồm các phần tử được lấy ra
+//trả về 1 mảng mới gồm các phần tử được lấy ra , vẫn giữ nguyên mảng củ
 $array = ["a","b","c","d","e","f"];
 $sub_array = array_slice($array,2,3);
 var_dump($sub_array); //c ,d ,e
@@ -168,13 +169,19 @@ var_dump($sub_array); //c ,d ,e
 //mảng ban đầu sẽ bị biến đổi thành mảng mới
 $array = [1,2,3,4,5];
 $delete_array = array_splice($array,1,0,[9,10]);
-print_r($newArray); // mảng rỗng
+print_r($delete_array ); // mảng rỗng
 print_r($array); //1,9,10,2,3,4,5
 
 $array = [1,2,3,4,5];
-$delete = array_splice($array,1,2,[0,0,0]);
+$delete = array_splice($array,1,2,[0,0,0]); // không phải thêm như push() mà nó chuyển từng phần tử trong mảng thành từng phần tử
+print_r($delete); // 2,3                    // còn push ta thêm [0,0,0] nó sẽ hiểu thêm phần tử cuối là mảng [0,0,0]
+print_r($array);  //1,0,0,0,4,5 
+
+//thay thế
+$array = [1,2,3,4,5];
+$delete = array_splice($array,1,1,9);
 print_r($delete); // 2,3
-print_r($array);  //1,0,0,0,4,5
+print_r($array);  //1,9,3,4,5
 
 //hàm array_map() : sử dụng để áp dụng hàm cho tất cả các phần tử trong mảng
 //trả về 1 mảng mới gồm các phần tử đã áp dụng hàm
@@ -187,7 +194,7 @@ print_r($newArray);
 
 
 $array1 = [1,2,3];
-$array2 = [9,8,7];
+$array2 = [9,8,7]; 
 $newArray = array_map(function($value1, $value2){
       return $value1 + $value2;
 },$array1,$array2);
@@ -199,10 +206,10 @@ print_r($newArray);
 //nếu không có phần tử nào thoã mãn thì trả về mảng rỗng
 $array = [1,2,3,4,5];
 $newArray = array_filter($array,function($value){
-    return $value < 0;
+    return $value < 2;
 });
-print_r($newArray);
-print_r($array);
+print_r($newArray); //1
+print_r($array); // 1 2 3 4 5
 
 
 // ARRAY_FILTER_USE_KEY : dùng chết độ ( mode) lấy key thay vì value của mảng

@@ -1,0 +1,10 @@
+{
+    "name": "pc/lab2",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "app/"
+        }
+    },
+    "require": {}
+}
