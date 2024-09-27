@@ -12,7 +12,7 @@
 <body>
     <form class="row g-3 mt-3 mb-3" method="POST" action="./index.php">
         <div class="col-auto">
-            <label for="nameStudent" class="visually-hidden">Email</label>
+            <label for="nameStudent" class="visually-hidden">email</label>
             <input type="text" class="form-control" id="nameStudent" name="email" placeholder="Nhập email cần tìm">
         </div>
         <div class="col-auto">
